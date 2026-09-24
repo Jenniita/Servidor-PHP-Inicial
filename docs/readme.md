@@ -411,18 +411,109 @@ primera vez que se utiliza Git en el ordenador.
 
 ### Guardar cambios durante el trabajo
 
-Cada vez que se modifique el proyecto, por ejemplo `index.php`, se puede crear
-una nueva version con:
+Cada vez que se modifique el proyecto, por ejemplo `docs/readme.md`,
+`README.md` o `index.php`, se puede guardar y subir la nueva version siguiendo
+estos pasos desde la carpeta principal del proyecto:
+
+1. Comprobar que archivos han cambiado:
+
+   ```powershell
+   git status
+   ```
+
+2. Preparar todos los cambios para el commit:
+
+   ```powershell
+   git add .
+   ```
+
+   El punto significa que se incluyen los archivos modificados, nuevos o
+   eliminados del proyecto. Si solo se quiere preparar un archivo concreto,
+   se puede indicar su ruta, por ejemplo `git add index.php`.
+
+3. Crear un commit con un mensaje que explique el cambio:
+
+   ```powershell
+   git commit -m "Actualiza la documentacion y la pagina PHP"
+   ```
+
+4. Subir el commit a GitHub:
+
+   ```powershell
+   git push origin main
+   ```
+
+5. Comprobar que no quedan cambios pendientes:
+
+   ```powershell
+   git status
+   ```
+
+El flujo completo, listo para copiar, es:
 
 ```powershell
 git status
 git add .
 git commit -m "Describe el cambio realizado"
+git push origin main
+git status
 ```
 
 Un commit no es una copia independiente de todos los archivos, sino un punto
 del historial al que se puede volver. Conviene hacer commits pequenos y usar
 mensajes que expliquen el cambio.
+
+### Error `rejected (fetch first)` al hacer `git push`
+
+Este error aparece cuando GitHub tiene cambios que no existen en el repositorio
+local. Git evita el `push` para no sobrescribir el historial remoto.
+
+En este proyecto, el repositorio local tenia un commit inicial llamado
+`Estado inicial del proyecto`, mientras que GitHub ya tenia otro commit inicial
+llamado `Initial commit`, que incluia un archivo `README.md`. Como se crearon
+por separado, los dos commits no tenian un antepasado comun. Por eso Git rechazo
+el `push` y mostro el mensaje `fetch first`: primero habia que descargar e
+integrar los cambios remotos.
+
+La solucion se realizo paso a paso. Primero se comprobo el estado y se
+descargaron los datos del remoto sin modificar los archivos locales:
+
+```powershell
+git status
+git fetch origin
+```
+
+Despues se integraron los dos historiales con `--allow-unrelated-histories`,
+una opcion necesaria cuando los commits no tienen un antepasado comun:
+
+```powershell
+git merge origin/main --allow-unrelated-histories -m "Integra el historial remoto"
+```
+
+La fusion conservo los archivos del proyecto y anadio el `README.md` remoto.
+Si Git mostrase conflictos, habria que corregir los archivos indicados y
+ejecutar `git add .` seguido de un `git commit`.
+
+Por ultimo, se subieron los cambios integrados:
+
+```powershell
+git push origin main
+```
+
+El `push` se completo correctamente y las ramas local y remota quedaron
+sincronizadas. No se utilizo `git push --force`, porque puede eliminar cambios
+que ya existan en GitHub.
+
+Para evitar este problema en el futuro, antes de empezar a trabajar hay que
+descargar los cambios remotos y, despues de trabajar, guardar y subir los
+cambios:
+
+```powershell
+git pull origin main
+git add .
+git commit -m "Describe el cambio realizado"
+git push origin main
+```
 
 ### Guardar una copia en GitHub o GitLab
 

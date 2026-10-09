@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Saludo para el ejercicio 1 del RA2</h1>
+    <h1>Saludo para el ejercicio 1 en PHP del RA2 Bloque 1</h1>
     <p>El resultado de la suma 2 + 2 es: <?php echo 2 + 2 ?></p>
     
 </body>

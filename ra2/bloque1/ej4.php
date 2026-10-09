@@ -1,0 +1,21 @@
+<?php $tituloLibro = "El Principito" ?>
+<?php $precioLibro = 10.90 ?>
+<?php $disponibilidadLibro = true ?>
+<?php $precioConIva = $precioLibro * 1.21 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 4 con PHP del RA2, Bloque 1</h1>
+    <h2>Operadores</h2>
+    <p>El titulo del libro es: <?= $tituloLibro?></p>
+    <p>Su precio sin IVA es: <?= $precioLibro?></p>
+    <p>Su precio con IVA es: <?= $precioConIva?></p>
+    <p>Su disponibilidad es: <?= $disponibilidadLibro ? "Disponible" : "No disponible" ?></p>
+    
+</body>
+</html>

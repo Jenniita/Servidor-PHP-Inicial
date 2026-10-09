@@ -1,5 +1,6 @@
 FROM php:8.3-apache
 
 COPY index.php /var/www/html/index.php
+COPY ra2/ /var/www/html/ra2/
 
 EXPOSE 80

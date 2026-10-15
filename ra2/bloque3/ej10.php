@@ -36,8 +36,8 @@ $precioConIva = calcularPrecioIva($libro["precioBase"], $iva);
 </head>
 
 <body>
-    <h1>Ejercicio 9 en PHP Bloque 2</h1>
-    <h2>Ámbito de variables</h2>
+    <h1>Ejercicio 10 en PHP Bloque 2</h1>
+    <h2>Cambia el comportamiento por defecto</h2>
     <p>Nombre del libro: <?= $libro["titulo"] ?></p>
     <p>El precio del libro sin IVA: <?= $libro["precioBase"] ?></p>
     <p>El precio del libro con IVA <?= $precioConIva ?></p>

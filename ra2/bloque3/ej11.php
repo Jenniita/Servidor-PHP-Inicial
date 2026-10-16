@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <h1>Ejercicio 6 en PHP del Bloque 2</h1>
+    <h1>Ejercicio 11 en PHP del Bloque 3</h1>
     <h2>La ficha de un libro</h2>
     <p>Nombre del libro: <?= $tituloLibro ?></p>
     <p>El precio del libro sin IVA: <?=$precioLibro ?></p>

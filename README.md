@@ -88,3 +88,36 @@ echo date("H:i");
 La zona `Europe/Madrid` ajusta automáticamente la hora de verano e invierno.
 
 Por ejemplo, el ejercicio 2 se puede abrir en <http://localhost:8081/ra2/bloque1/ej2.php>.
+
+## RA3 — Catálogo y funciones
+
+- `http://localhost:8081/ra3/bloque1/ejra31.php`: estado de un libro.
+- `http://localhost:8081/ra3/bloque1/ejra32.php`: comprobación para prestar un libro.
+- `http://localhost:8081/ra3/bloque1/ejra33.php`: catálogo con un bucle.
+- `http://localhost:8081/ra3/bloque1/ejra34.php`: cuenta los libros disponibles.
+- `http://localhost:8081/ra3/bloque1/ejra35.php`: funciones de precio con IVA y estado dentro del catálogo.
+- `http://localhost:8081/ra3/bloque2/ejra36.php`: formulario de búsqueda.
+- `http://localhost:8081/ra3/bloque2/ejra37.php`: recoge la búsqueda con GET.
+- `http://localhost:8081/ra3/bloque2/ejra38.php`: busca libros por título.
+- `http://localhost:8081/ra3/bloque2/ejra39.php`: filtra también por disponibilidad.
+- `http://localhost:8081/ra3/bloque2/ejra310.php`: muestra un mensaje si no hay resultados.
+- `http://localhost:8081/ra3/bloque3/ejra311.php`: compara formularios GET y POST.
+- `http://localhost:8081/ra3/bloque3/ejra312.php`: catálogo con búsqueda en PHP.
+
+
+## RA4 — Estado entre peticiones
+
+Los ejercicios de estado del RA4 están en `ra4/`. El servidor Docker también monta esa carpeta para que los cambios se vean sin reconstruir la imagen. Se pueden abrir estas páginas:
+
+- `http://localhost:8081/ra4/bloque1/ejra41.php`: contador en una variable normal; se reinicia en cada petición.
+- `http://localhost:8081/ra4/bloque1/ejra42.php`: última búsqueda guardada en cookie y en `localStorage`.
+- `http://localhost:8081/ra4/bloque1/ejra43.php`: contador de visitas guardado en sesión.
+- `http://localhost:8081/ra4/bloque1/ejra44.php`: catálogo y bolsa de préstamos guardada en sesión.
+- `http://localhost:8081/ra4/bloque2/ejra45.php`: login con usuarios en memoria.
+- `http://localhost:8081/ra4/bloque2/ejra46.php`: cerrar sesión.
+- `http://localhost:8081/ra4/bloque2/ejra47.php`: bolsa protegida para usuarios identificados.
+- `http://localhost:8081/ra4/bloque2/ejra48.php`: panel protegido para administradores.
+- `http://localhost:8081/ra4/bloque3/ejra411.php`: formulario GET y POST.
+- `http://localhost:8081/ra4/bloque3/ejra412.php`: catálogo y búsqueda en PHP.
+
+La primera vez, o después de cambiar la configuración de Docker, ejecuta `docker compose up -d` desde la raíz del proyecto.

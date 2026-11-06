@@ -7,3 +7,4 @@ services:
       - ./ra2:/var/www/html/ra2
       - ./ra3:/var/www/html/ra3
       - ./ra4:/var/www/html/ra4
+      - ./loginEjercicio:/var/www/html/loginEjercicio
